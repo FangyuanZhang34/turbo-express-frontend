@@ -18,7 +18,62 @@ body {
  -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color:#169b7ef5;
+  font-weight: 700;
+}
+
+a:hover {
+  color:#169b7ead;
+  font-weight: 700;
+}
+
 code {
  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
    monospace;
+}
+
+button.ant-btn.ant-btn-primary {
+  background-color: #f7ab28;
+  border-color: #f7ab28;
+  color: #241008;
+}
+
+button.ant-btn.ant-btn-primary:hover {
+  background-color: #f7ab28ba;
+}
+
+button.ant-btn:hover {
+  border-color: #f7ab28;
+  color: #241008;
+}
+
+input#username.ant-input:hover {
+  border-color: #f7ab28;
+}
+
+input#username.ant-input:focus {
+  border-color: #f7ab28;
+  -webkit-box-shadow: 0 0 0 2px #f7ab2874;
+          box-shadow: 0 0 0 2px #f7ab2874;
+}
+
+input#password.ant-input:hover {
+  border-color: #f7ab28;
+}
+
+input#password.ant-input:focus {
+  border-color: #f7ab28;
+  -webkit-box-shadow: 0 0 0 2px #f7ab2874;
+          box-shadow: 0 0 0 2px #f7ab2874;
+}
+
+.ant-input:hover {
+  border-color: #f7ab28;
+}
+
+.ant-input:focus {
+  border-color: #f7ab28;
+  -webkit-box-shadow: 0 0 0 2px #f7ab2874;
+          box-shadow: 0 0 0 2px #f7ab2874;
 }

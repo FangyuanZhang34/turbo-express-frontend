@@ -1,8 +1,50 @@
 .home {
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-.tabPage{
+.home .tabPage{
     margin-top: 0%;
+}
+
+.home div.ant-tabs-tab-active.ant-tabs-tab {
+    color: #241008;
+}
+
+.home div.ant-tabs-tab-active.ant-tabs-tab:hover {
+    color: #7c391d;
+}
+
+.home div.ant-tabs-tab.ant-tabs-tab:hover {
+    color: #7c391d;
+}
+
+.home div.ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+    background-color: #f7ab28;
+}
+
+
+.home .ant-input:hover {
+    border-color: #f7ab28;
+}
+
+.home .ant-input:focus {
+    border-color: #f7ab28;
+    -webkit-box-shadow: 0 0 0 2px #f7ab2874;
+            box-shadow: 0 0 0 2px #f7ab2874;
+}
+
+.home div.ant-row.ant-form-item {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.home button.ant-btn{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.home button.ant-btn.ant-btn-primary {
+    width: 250px;
+    margin-right: 15%;
 }

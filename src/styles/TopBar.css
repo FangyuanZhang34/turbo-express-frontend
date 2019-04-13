@@ -1,5 +1,23 @@
 .logout {
- float: right;
- padding-top: 13px;
- padding-right: 13px;
+    float: right;
+    margin-top: 16px;
+    margin-right: 2%;
+    color: #f7ab28;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.App-header header.App-header {
+    background-color: #241008;
+}
+
+.App-header .App-title {
+     color: #fff3ea;
+     font-size: 23px;
+     font-style: italic;
+     font-weight: 900;
+}
+
+.App-header .turbo {
+    color: #f7ab28;
 }
