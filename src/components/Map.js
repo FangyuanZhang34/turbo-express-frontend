@@ -11,7 +11,7 @@ export class Map extends Component{
 	constructor( props ){
 		super( props );
 		this.state = {
-            addressPU: '1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA',
+            addressPU: '8116 Lincoln Way, San Francisco, CA 94122, USA',
             addressDO: '2086 Newpark Mall, Newark, CA 94560, USA',
 			mapPosition: {
 				lat: this.props.center.lat,
@@ -22,60 +22,41 @@ export class Map extends Component{
 				lng: this.props.center.lng
             },
             droppOffMarkerPosition: {
-				lat: this.props.center.lat+0.008,
-				lng: this.props.center.lng+0.008
+				lat: this.props.center.lat-0.03,
+				lng: this.props.center.lng-0.03
             },
-            zoom: 12.6
+            zoom: 12.4
         }
         this.googleMap = React.createRef();
 	}
 	/**
 	 * Get the current address from the default map position and set those values in the state
 	 */
-	componentDidMount() {
-        Geocode.fromLatLng( this.state.pickUpMarkerPosition.lat , this.state.pickUpMarkerPosition.lng).then(
-			response => {
-				const address = response.results[0].formatted_address;
-					// addressArray =  response.results[0].address_components,
-					// city = this.getCity( addressArray ),
-					// area = this.getArea( addressArray ),
-					// state = this.getState( addressArray );
+	// componentDidMount() {
+    //     Geocode.fromLatLng( this.state.pickUpMarkerPosition.lat , this.state.pickUpMarkerPosition.lng).then(
+	// 		response => {
+	// 			const address = response.results[0].formatted_address;
+	// 			this.setState( {
+	// 				addressPU: ( address ) ? address : ''
+	// 			} );
+	// 		},
+	// 		error => {
+	// 			console.error( error );
+	// 		}
+    //     );
+    //     Geocode.fromLatLng(this.state.droppOffMarkerPosition.lat , this.state.droppOffMarkerPosition.lng).then(
+	// 		response => {
+	// 			const address = response.results[0].formatted_address;
 
-				// console.log( 'city', city, area, state );
-
-				this.setState( {
-					addressPU: ( address ) ? address : ''
-					// area: ( area ) ? area : '',
-					// city: ( city ) ? city : '',
-					// state: ( state ) ? state : '',
-				} );
-			},
-			error => {
-				console.error( error );
-			}
-        );
-        Geocode.fromLatLng(this.state.droppOffMarkerPosition.lat , this.state.droppOffMarkerPosition.lng).then(
-			response => {
-				const address = response.results[0].formatted_address;
-					// addressArray =  response.results[0].address_components,
-					// city = this.getCity( addressArray ),
-					// area = this.getArea( addressArray ),
-					// state = this.getState( addressArray );
-
-				// console.log( 'city', city, area, state );
-
-				this.setState( {
-					addressDO: ( address ) ? address : ''
-					// area: ( area ) ? area : '',
-					// city: ( city ) ? city : '',
-					// state: ( state ) ? state : '',
-				} );
-			},
-			error => {
-				console.error( error );
-			}
-        );
-	};
+	// 			this.setState( {
+	// 				addressDO: ( address ) ? address : ''
+	// 			} );
+	// 		},
+	// 		error => {
+	// 			console.error( error );
+	// 		}
+    //     );
+	// };
 	/**
 	 * Component should only update ( meaning re-render ), when the user selects the address, or drags the pin
 	 *
@@ -85,12 +66,8 @@ export class Map extends Component{
 	 */
 	shouldComponentUpdate( nextProps, nextState ){
 		if (
-            (this.state.pickUpMarkerPosition.lat !== this.props.center.lat &&
-                this.state.droppOffMarkerPosition.lat !== this.props.center.lat) ||
-            this.state.address !== nextState.address
-			// this.state.city !== nextState.city ||
-			// this.state.area !== nextState.area ||
-			// this.state.state !== nextState.state
+            this.state.addressDO !== nextState.addressDO ||
+            this.state.addressPU !== nextState.addressPU
 		) {
 			return true
 		} else if ( this.props.center.lat === nextProps.center.lat ){
@@ -99,15 +76,9 @@ export class Map extends Component{
 	}
 
     onZoomChanged = () => {
-        const newCenter = this.googleMap.current.getCenter();
         this.setState({
             zoom: this.googleMap.current.getZoom()
-        //     center: {
-        //         latitude: newCenter.lat(),
-        //         longitude: newCenter.lng()
-        //   }
         });
-        // this.props.needChangePageOffset(window.pageXOffset, window.pageYOffset);
       };
 
 	/**
@@ -142,7 +113,6 @@ export class Map extends Component{
 				console.error(error);
 			}
 		);
-        this.props.needChangePageOffset(window.pageXOffset, window.pageYOffset);
 	};
 
     onDOMarkerDragEnd = ( event ) => {
@@ -194,7 +164,7 @@ export class Map extends Component{
 						{/* InfoWindow on top of marker */}
 						<InfoWindow
 							onClose={this.onInfoWindowClose}
-							position={{ lat: ( this.state.pickUpMarkerPosition.lat + 0.004 ), lng: this.state.pickUpMarkerPosition.lng }}
+							position={{ lat: ( this.state.pickUpMarkerPosition.lat + 0.02/this.state.zoom), lng: this.state.pickUpMarkerPosition.lng }}
 						>
 							<div>
 								<span style={{ padding: 0, margin: 0 }}>{ "Pickup: "+this.state.addressPU }</span>
@@ -202,7 +172,7 @@ export class Map extends Component{
                         </InfoWindow>
                         <InfoWindow
 							onClose={this.onInfoWindowClose}
-							position={{ lat: ( this.state.droppOffMarkerPosition.lat + 0.004 ), lng: this.state.droppOffMarkerPosition.lng }}
+							position={{ lat: ( this.state.droppOffMarkerPosition.lat + 0.02/this.state.zoom), lng: this.state.droppOffMarkerPosition.lng }}
 						>
 							<div>
 								<span style={{ padding: 0, margin: 0 }}>{ "Droppoff: "+this.state.addressDO }</span>

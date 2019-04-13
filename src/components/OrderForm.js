@@ -1,4 +1,4 @@
-import React, { Component }from 'react';
+import React from 'react';
 import { Map } from './Map'
 import { Form, Input, Button, message } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
@@ -6,7 +6,7 @@ import { API_ROOT, TOKEN_KEY, AUTH_HEADER } from '../constants.js';
 
 class OrderForm extends React.Component {
     state = {
-        addressPU: '1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA',
+        addressPU: '8116 Lincoln Way, San Francisco, CA 94122, USA',
         addressDO: '2086 Newpark Mall, Newark, CA 94560, USA',
         pickUpMarkerPosition: {
             lat: 0,
@@ -87,18 +87,6 @@ class OrderForm extends React.Component {
             wrapperCol: {
               xs: { span: 24 },
               sm: { span: 10 },
-            },
-          };
-          const tailFormItemLayout = {
-            wrapperCol: {
-              xs: {
-                span: 24,
-                offset: 0,
-              },
-              sm: {
-                span: 16,
-                offset: 8,
-              },
             },
           };
 

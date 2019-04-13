@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Divider, Button } from 'antd';
+import { Divider, Button } from 'antd';
 
 export class TrackData extends React.Component {
 
@@ -19,7 +19,7 @@ export class TrackData extends React.Component {
         var diffHour = hour - res[0];
         var diffMinute = minute - res[1];
         var diffSecond = second - res[2];
-        return (diffHour > 0 || (diffHour == 0 && diffMinute > 0) || (diffHour == 0 && diffMinute == 0 && diffSecond > 0));
+        return (diffHour > 0 || (diffHour === 0 && diffMinute > 0) || (diffHour === 0 && diffMinute === 0 && diffSecond > 0));
     };
 
     render(){

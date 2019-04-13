@@ -9,7 +9,7 @@ export class OrderId extends React.Component {
     };
 
     render(){
-        const pic = (this.props.robType == 'Drone') ? "http://img14.360buyimg.com/n7/jfs/t15265/50/2015250726/150052/1996ee0c/5a675125N4ad6dc92.jpg":"http://i.epochtimes.com/assets/uploads/2016/03/%E6%9C%BA%E5%99%A8%E4%BA%BA-600x400.jpg"
+        const pic = (this.props.robType === 'Drone') ? "http://img14.360buyimg.com/n7/jfs/t15265/50/2015250726/150052/1996ee0c/5a675125N4ad6dc92.jpg":"http://i.epochtimes.com/assets/uploads/2016/03/%E6%9C%BA%E5%99%A8%E4%BA%BA-600x400.jpg"
         const arrival = this.getArrival(this.props.arrival)
         return (
             <div className="routesList">

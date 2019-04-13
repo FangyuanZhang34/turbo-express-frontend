@@ -9,13 +9,12 @@ export class Route extends Component {
     
     clickOrder = (item) => {
         const token = localStorage.getItem(TOKEN_KEY);
-        const size = localStorage.getItem(size);
-        const weight = localStorage.getItem(weight);
+        const size = localStorage.getItem('size');
+        const weight = localStorage.getItem('weight');
         var now = new Date();
         var time = now.getTime() + (1000 * 60 * item.Duration);
         var newDate = new Date(time);
         const arrival = newDate.getHours().toString() + ":"+ newDate.getMinutes().toString() + ":"+ newDate.getSeconds().toString()
-        alert(arrival)
         fetch(`${API_ROOT}/order`, {
         method: 'POST',
         headers: {
@@ -24,7 +23,7 @@ export class Route extends Component {
         },
         body: JSON.stringify({
             size: size,
-            weight: weight,
+            weight: parseFloat(weight),
             arrival: arrival,
             pickup: item.pickup,
             dropoff: item.dropoff,
@@ -70,7 +69,7 @@ export class Route extends Component {
                 renderItem={(item) => (
                     <List.Item>
                         <List.Item.Meta
-                        avatar={<Avatar src= {item.RobotType == 'Drone' ? "http://img14.360buyimg.com/n7/jfs/t15265/50/2015250726/150052/1996ee0c/5a675125N4ad6dc92.jpg":"http://i.epochtimes.com/assets/uploads/2016/03/%E6%9C%BA%E5%99%A8%E4%BA%BA-600x400.jpg"} />}
+                        avatar={<Avatar src= {item.RobotType === 'Drone' ? "http://img14.360buyimg.com/n7/jfs/t15265/50/2015250726/150052/1996ee0c/5a675125N4ad6dc92.jpg":"http://i.epochtimes.com/assets/uploads/2016/03/%E6%9C%BA%E5%99%A8%E4%BA%BA-600x400.jpg"} />}
                         title={item.RobotType+' '+item.RobotId}
                         description={'Cost : $'+item.Cost.toFixed(2)+'; Distance : '+item.Dist.toFixed(2)+'km; Estimated Duration: '+item.Duration.toFixed(2)+'min'}
                         />

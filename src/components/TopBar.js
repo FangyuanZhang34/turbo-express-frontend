@@ -9,7 +9,7 @@ export class TopBar extends React.Component {
        <img src={logo} className="App-logo" alt="logo" />
        <div className="App-title"><span className="turbo">Turbo</span> Express</div>
        {this.props.isLoggedIn ?
-         <a className="logout" onClick={this.props.handleLogout} >
+         <a className="logout" onClick={this.props.handleLogout}>
            <Icon type="logout" />{' '}Logout
          </a> : null}
      </header>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Tabs } from 'antd';
+import { Tabs } from 'antd';
 import { Order } from './OrderForm'
 import { Route } from './Route'
 import { Track } from './Track'
@@ -36,7 +36,6 @@ export class Home extends React.Component {
       x: 0,
       y: 0
     },
-    orderId: '0',
     robType: 'Drone',
     arrival: '0:0:0',
     orderId: 0,
@@ -48,7 +47,7 @@ export class Home extends React.Component {
   }
  
   beginChoosingRoute = (begin, routes) => {
-    if (begin == true) {
+    if (begin === true) {
       // convert route to list
       this.setState({ isChoosingRoute: true, routes: routes});
     } else {
@@ -156,7 +155,7 @@ export class Home extends React.Component {
 
   render() {
     return ( 
-      <div class="home">
+      <div className="home">
       <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane tab="Place An Order" key="1" className="tabPage">
           {this.placeAnOrder()}

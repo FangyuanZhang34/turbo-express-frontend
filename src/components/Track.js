@@ -47,18 +47,6 @@ class TrackForm extends React.Component {
               sm: { span: 10 },
             },
           };
-          const tailFormItemLayout = {
-            wrapperCol: {
-              xs: {
-                span: 24,
-                offset: 0,
-              },
-              sm: {
-                span: 16,
-                offset: 8,
-              },
-            },
-          };
 
 
         return (   
