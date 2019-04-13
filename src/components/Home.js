@@ -5,6 +5,7 @@ import { Route } from './Route'
 import { Track } from './Track'
 import { OrderId } from './OrderId'
 import { TrackData } from './TrackData'
+import { About } from './About'
 
 // parent to child ==> use props
 // child to paren ==> use function
@@ -149,14 +150,18 @@ export class Home extends React.Component {
     } 
   }
 
-  userProfile = () => {
-    return "user profile";
+  about = () => {
+    return (
+      <About
+
+      />
+    );
   }
 
   render() {
     return ( 
       <div className="home">
-      <Tabs defaultActiveKey="1" onChange={callback}>
+      <Tabs defaultActiveKey="1">
         <TabPane tab="Place An Order" key="1" className="tabPage">
           {this.placeAnOrder()}
         </TabPane>
@@ -164,7 +169,7 @@ export class Home extends React.Component {
           {this.trackOrders()}
         </TabPane>
         <TabPane tab="User Profile" key="3" className="tabPage">
-          {this.userProfile()}
+          {this.about()}
         </TabPane>
       </Tabs>
     </div>
