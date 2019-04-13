@@ -168,7 +168,7 @@ export class Home extends React.Component {
         <TabPane tab="Track Orders" key="2" className="tabPage">
           {this.trackOrders()}
         </TabPane>
-        <TabPane tab="User Profile" key="3" className="tabPage">
+        <TabPane tab="About Us" key="3" className="tabPage">
           {this.about()}
         </TabPane>
       </Tabs>
