@@ -4,6 +4,7 @@ import { Order } from './OrderForm'
 import { Route } from './Route'
 import { Track } from './Track'
 import { OrderId } from './OrderId'
+import { TrackData } from './TrackData'
 
 // parent to child ==> use props
 // child to paren ==> use function
@@ -37,7 +38,9 @@ export class Home extends React.Component {
     },
     orderId: '0',
     robType: 'Drone',
-    arrival: '0:0:0'
+    arrival: '0:0:0',
+    orderId: 0,
+    trackData: '0:0:0',
   }
 
   componentDidMount(){
@@ -122,20 +125,22 @@ export class Home extends React.Component {
     });
   }
 
-  showTrackData = (trackData) => {
+  showTrackData = (orderId, trackData) => {
     this.setState({
       showTrackData: true,
-      trackData: trackData,
+      orderId: orderId,
+      trackData: trackData.ArrivalTime,
     });
   }
 
   trackOrders = () => {
     if(this.state.showTrackData) {
       return (
-
-        <div className="trackData">
-
-        </div> 
+        <TrackData
+          orderId={this.state.orderId}
+          trackData={this.state.trackData}
+          backToTrackOrder={this.backToTrackOrder}
+        />
     )
     } else {
       return (

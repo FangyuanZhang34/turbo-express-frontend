@@ -12,7 +12,6 @@ class TrackForm extends React.Component {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 const url = API_ROOT+'/track?orderid='+values.orderId;
-                alert(url);
                 fetch(url, {
                     method: 'GET',
                     headers: {
@@ -25,7 +24,7 @@ class TrackForm extends React.Component {
                         throw new Error(response.statusText);
                 }).then((trackData) => {
                     console.log(trackData);
-                    this.props.showTrackData(trackData);               
+                    this.props.showTrackData(values.orderId, trackData);               
                 })
                 .catch((e) => {
                     console.log(e)
