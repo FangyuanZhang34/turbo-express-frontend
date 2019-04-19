@@ -11,17 +11,17 @@ https://youtu.be/IEk_Ui3Jdn8
 ### Members of our team:
 
 #### Front-end
-Fangyuan Zhang
-Zehao Lu<br>      
-Qianying Ji  
+Fangyuan Zhang<br>
+Qianying Ji<br>  
+Zehao Lu
 #### Back-end
-Lei Tao<br>   
-Guanjie Cui<br>  
-Yibing Zhang<br>
-Baojie Lu<br>    
-He Li<br>   
-Yingjian Wu<br>
-Xu Ye 
+Baojie Lu<br> 
+Guanjie Cui<br> 
+He Li<br>  
+Lei Tao<br>
+Xu Ye<br>  
+Yibing Zhang<br> 
+Yingjian Wu
 <br>
 
 <hr>
