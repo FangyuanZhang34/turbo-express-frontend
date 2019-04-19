@@ -1,24 +1,26 @@
 # turbo-express-frontend
-This is a React application that connect to a GoLang backend API.
-It is built for a logistics service, with functions to register, login, place orders, choose and show pick up and drop off locations on Google Map, track orders using order ID.<br>
+This is a React application that connects to a GoLang backend API.
+It is built for a logistics service, with functions to register, login, place orders, choose and show pick up and drop off locations on Google Map, track orders using order IDs.<br>
 After the user place an order, the back-end computes the cost and distance based on the size, weight and locations from the user's input, and responds with two choices: deliver by a robot or a drone.<br>
 Users can also track order with order IDs. The application will show users if the package is delivered or not and an estimated delivered time.<br>
-Bellow is a Demo to show how it works:<br>
+Below is a Demo to show how it works:<br>
 https://youtu.be/IEk_Ui3Jdn8
 
 <hr>
+
 ### Members of our team:
+
 #### Front-end
 Fangyuan Zhang
-Zehao Lu      
+Zehao Lu<br>      
 Qianying Ji  
 #### Back-end
-Lei Tao   
-Guanjie Cui  
-Yibing Zhang
-Baojie Lu    
-He Li   
-Yingjian Wu
+Lei Tao<br>   
+Guanjie Cui<br>  
+Yibing Zhang<br>
+Baojie Lu<br>    
+He Li<br>   
+Yingjian Wu<br>
 Xu Ye 
 <br>
 
