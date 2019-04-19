@@ -12,15 +12,15 @@ https://youtu.be/IEk_Ui3Jdn8
 
 #### Front-end
 Fangyuan Zhang<br>
-Qianying Ji<br>  
+Qianying Ji<br>
 Zehao Lu
 #### Back-end
-Baojie Lu<br> 
-Guanjie Cui<br> 
-He Li<br>  
+Baojie Lu<br>
+Guanjie Cui<br>
+He Li<br>
 Lei Tao<br>
-Xu Ye<br>  
-Yibing Zhang<br> 
+Xu Ye<br>
+Yibing Zhang<br>
 Yingjian Wu
 <br>
 
