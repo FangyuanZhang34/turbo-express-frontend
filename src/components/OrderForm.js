@@ -94,7 +94,7 @@ class OrderForm extends React.Component {
         return (   
             <Form {...formItemLayout} onSubmit={this.handleSubmit} className="order-form">
                 <Form.Item label="size-length">
-                    {getFieldDecorator('length', {
+                    {getFieldDecorator('length(cm)', {
                         rules: [{ required: false,}, {
                             validator: this.validateToNextPassword,
                         }],
@@ -103,7 +103,7 @@ class OrderForm extends React.Component {
                     )}
                 </Form.Item>
                 <Form.Item label="size-width">
-                    {getFieldDecorator('width', {
+                    {getFieldDecorator('width(cm)', {
                         rules: [{ required: false,}, {
                             validator: this.validateToNextPassword,
                         }],
@@ -112,7 +112,7 @@ class OrderForm extends React.Component {
                     )}
                 </Form.Item>
                 <Form.Item label="size-height">
-                    {getFieldDecorator('height', {
+                    {getFieldDecorator('height(cm)', {
                         rules: [{ required: false,}, {
                             validator: this.validateToNextPassword,
                         }],
@@ -121,7 +121,7 @@ class OrderForm extends React.Component {
                     )}
                 </Form.Item>
                 <Form.Item label="weight">
-                    {getFieldDecorator('weight', {
+                    {getFieldDecorator('weight(kg)', {
                         rules: [{ required: false,}, {
                             validator: this.validateToNextPassword,
                         }],
